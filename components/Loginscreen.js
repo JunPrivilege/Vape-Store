@@ -23,37 +23,15 @@ function Login ({navigation})  {
         <StatusBar backgroundColor='#f5f5f5' barStyle={'dark-content'}/>
 <ScrollView>
     <View style={{paddingHorizontal:20, flex:1, justifyContent:'center'}}>
-        <View style={{flex:1, paddingTop:50}}>
-            <View style={{flexDirection:'row', justifyContent:'center',}}>
-                <Icon style={{
-                            color:'#808080', 
-                            fontSize:20, marginRight:7}} name ='crown'/>
-                <Icon style={{
-                            color:'#808080', 
-                            fontSize:20}} name ='crown'/>
-                <Icon style={{
-                            color:'#808080', 
-                            fontSize:20, marginLeft:7}} name ='crown'/>
-            </View>
-                <Text style={{
-                            textAlign:'center',
-                            fontSize:40, 
-                            fontWeight:'300',
-                            color:'#808080'}}>Jun<Text style={{
-                                                            fontWeight:'bold', 
-                                                            color:'#808080'}}>store</Text></Text>
-                <Text style={{
-                            textAlign:'center',
-                            fontSize:20, 
-                            fontWeight:'300',
-                            color:'#808080'}}>Vapoorizer No.1</Text>
-        </View>
-                 <Text style={{
+    <View style={{flex:1, justifyContent:'center', alignItems:'center', paddingTop:30,}}>
+      <Image style={{width:200, height:200}} source={require('../src/images/logormv.png')}/>
+    </View>
+             <Text style={{
                             fontSize:25, 
                             fontWeight:'400', 
                             color:'#000', 
-                            marginTop:30}}>Welcome Back !</Text>
-                 <Text style={{
+                            marginTop:20}}>Welcome Back !</Text>
+             <Text style={{
                             fontSize:15, 
                             fontWeight:'300', 
                             color:'#000', 
@@ -69,7 +47,7 @@ function Login ({navigation})  {
                 <TextInput style={{
                                 flex:1, 
                                 marginLeft:10, 
-                                color:'black'}} placeholder='Input email ID' placeholderTextColor='black' KeyboardType='email-address'/>
+                                color:'black'}} placeholder='Username' placeholderTextColor='black' KeyboardType='email-address'/>
             </View>
             <View style={{
                         flexDirection:'row', 

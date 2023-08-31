@@ -25,37 +25,15 @@ function Login ({navigation})  {
     <ImageBackground source={require('../src/images/smoke.png')} style={{flex:1}}>
         <StatusBar backgroundColor='#f5f5f5' barStyle={'dark-content'}/>
 <ScrollView>
-    <View style={{paddingHorizontal:20, flex:1, justifyContent:'center'}}>
-        <View style={{flex:1, paddingTop:50}}>
-            <View style={{flexDirection:'row', justifyContent:'center',}}>
-                <Icon style={{
-                            color:'#808080', 
-                            fontSize:20, marginRight:7}} name ='crown'/>
-                <Icon style={{
-                            color:'#808080', 
-                            fontSize:20}} name ='crown'/>
-                <Icon style={{
-                            color:'#808080', 
-                            fontSize:20, marginLeft:7}} name ='crown'/>
-            </View>
-                <Text style={{
-                            textAlign:'center',
-                            fontSize:40, 
-                            fontWeight:'300',
-                            color:'#808080'}}>Jun<Text style={{
-                                                            fontWeight:'bold', 
-                                                            color:'#808080'}}>store</Text></Text>
-                <Text style={{
-                            textAlign:'center',
-                            fontSize:20, 
-                            fontWeight:'300',
-                            color:'#808080'}}>Vapoorizer No.1</Text>
-        </View>
+    <View style={{paddingHorizontal:10, flex:1, justifyContent:'center'}}>
+    <View style={{flex:1, justifyContent:'center', alignItems:'center', paddingTop:30 }}>
+      <Image style={{width:200, height:200}} source={require('../src/images/logormv.png')}/>
+    </View>
                  <Text style={{
                             fontSize:25, 
                             fontWeight:'400', 
                             color:'#000', 
-                            marginTop:30,
+                            marginTop:20,
                             paddingBottom:15}}>Registration</Text>
             <View style={{
                         flexDirection:'row', 
@@ -66,7 +44,7 @@ function Login ({navigation})  {
                 <TextInput style={{
                                 flex:1, 
                                 marginLeft:10, 
-                                color:'black'}} placeholder='Input email ID' placeholderTextColor='black' KeyboardType='email-address'/>
+                                color:'black'}} placeholder='Username' placeholderTextColor='black' KeyboardType='email-address'/>
             </View>
             <View style={{
                         flexDirection:'row', 
@@ -118,36 +96,6 @@ function Login ({navigation})  {
                             textAlign:'center',
                             color:'#fff'}}>CREATE ACCOUNT</Text>
             </TouchableOpacity>    
-                <Text style={{
-                            fontSize:15, 
-                            textAlign:'center', 
-                            fontWeight:'400', color:'#808080', paddingBottom:20}}>Or, Sign Up with ...</Text>
-            <View style={{flexDirection:'row', justifyContent:'space-around'}}>
-            <TouchableOpacity style={{
-                        borderColor:'#808080',                    
-                        paddingHorizontal:10,
-                        paddingVertical:10,
-                        borderRadius:10
-                        }}>
-                <Image style={{height:35, width:35}} source={require('../src/images/google.png')}/>
-            </TouchableOpacity>
-            <TouchableOpacity style={{
-                        borderColor:'#808080', 
-                        paddingHorizontal:10, 
-                        paddingVertical:10,
-                        borderRadius:10
-                        }}>
-                <Image style={{height:35, width:35}} source={require('../src/images/facebook.png')}/>
-            </TouchableOpacity>
-            <TouchableOpacity style={{
-                        borderColor:'#808080',                       
-                        paddingHorizontal:10,
-                        paddingVertical:10,
-                        borderRadius:10,
-                        }}>
-                <Image style={{height:35, width:35}} source={require('../src/images/twitter.png')}/>
-            </TouchableOpacity>
-            </View>
             <View style={{flexDirection:'row', justifyContent:'center', paddingTop:10, paddingBottom:30}}>
                 <Text style={{color:'#808080', fontWeight:'400'}}>Already have an account?</Text>
                 <TouchableOpacity onPress={() => navigation.goBack()}>

@@ -11,26 +11,6 @@ function Junstore({navigation}) {
     const handleSearch = (text) => {
       setSearchQuery(text);
     };
-         const [kategori, setKategori] = useState([
-            {
-                nama: 'RDA',
-            },
-            {
-                nama: 'Drips',
-            },
-            {
-                nama: 'Coil',
-            },
-            {
-                nama: 'Baterai',
-            },
-            {
-                nama: 'Charger',
-            },
-            {
-                nama: 'Liquid',
-            },
-        ])
         const [kategoriSeleksi, setKategoriSeleksi] = useState([
             {bestS: 'Paradewa', author:'Qorygore', 
             image :require('../src/images/4.png')},
@@ -80,7 +60,7 @@ function Junstore({navigation}) {
             alignItems: 'center',
             borderRadius:10,
             paddingHorizontal:25,
-            paddingVertical:3,
+            paddingVertical:3, 
             marginLeft:10,
             marginRight:10,
             marginBottom:10,
@@ -101,27 +81,6 @@ function Junstore({navigation}) {
        />
         </View>
      </View>
-      <View>
-         <FlatList
-          data={kategori}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          renderItem={({ item }) => 
-              <TouchableOpacity style={{
-              marginTop:10,
-              borderRadius:20,
-              paddingHorizontal:25,
-              paddingVertical:8,
-              marginLeft:10,
-              marginRight:10,
-              marginBottom:10,
-              backgroundColor:'#ffffff',
-              elevation:4
-            }}>
-        <Text>{item.nama}</Text>
-        </TouchableOpacity>}
-     />
-      </View>
       <View style={{marginHorizontal:20, 
                     marginBottom:20, 
                     marginTop:20, 

@@ -5,57 +5,99 @@ import Foundation from 'react-native-vector-icons/Foundation';
 
 const Searchpage = () => {
 
+  const [kategori, setKategori] = useState([
+    {
+        nama: 'RDA',
+    },
+    {
+        nama: 'Drips',
+    },
+    {
+        nama: 'Coil',
+    },
+    {
+        nama: 'Baterai',
+    },
+    {
+        nama: 'Charger',
+    },
+    {
+        nama: 'Liquid',
+    },
+])
+
   const [kategoriSeleksi, setKategoriSeleksi] = useState([
-    {SearchP: 'Paradewa', author:'Qorygore', price:'BUY', 
+    {SearchP: 'Paradewa', author:'Qorygore', button:'BUY', price:'Rp130.000',
     Foundation: <Foundation name="shopping-cart" size={25} color='#808080'/>,
     image :require('../src/images/4.png')},
-    {SearchP: 'Muffin & Xes', author:'Reza arap', price:'BUY', 
+    {SearchP: 'Muffin & Xes', author:'Reza arap', button:'BUY', price:'Rp125.000',
     Foundation: <Foundation name="shopping-cart" size={25} color='#808080'/>,
     image :require('../src/images/5.png')},
-    {SearchP: 'Savage', author:'Ekoju', price:'BUY', 
+    {SearchP: 'Savage', author:'Ekoju', button:'BUY', price:'Rp120.000',
     Foundation: <Foundation name="shopping-cart" size={25} color='#808080'/>,
     image :require('../src/images/1.png')},
-    {SearchP: 'Groooven', author:'Xinn', price:'BUY',
+    {SearchP: 'Groooven', author:'Xinn', button:'BUY', price:'Rp135.000',
      Foundation: <Foundation name="shopping-cart" size={25} color='#808080'/>,
     image :require('../src/images/3.png')},
-    {SearchP: 'Creamsie Whimsie', author:'Danzel & Lilo', price:'BUY',
+    {SearchP: 'Creamsie Whimsie', author:'Danzel & Lilo', button:'BUY', price:'Rp140.000',
     Foundation: <Foundation name="shopping-cart" size={25} color='#808080'/>,
     image :require('../src/images/2.png')},
-    {SearchP: 'Eskrim Mall', author:'Martinus Salim', price:'BUY', 
+    {SearchP: 'Eskrim Mall', author:'Martinus Salim', button:'BUY', price:'Rp145.000',
     Foundation: <Foundation name="shopping-cart" size={25} color='#808080'/>,
     image :require('../src/images/6.png')},              
 ])
 
   return (
     <SafeAreaView style={{flex: 1}}>
-      <StatusBar translucent backgroundColor={'transparent'} barStyle={'light-content'}/>
+      <StatusBar backgroundColor={'white'} barStyle={'dark-content'}/>
         <ImageBackground source={require('../src/images/smoke.png')} style={{flex: 1}}>
-          <View style={{backgroundColor:'#808080', padding:30}}>
-            <View style={{flexDirection:'row', alignItems:'center', marginRight:40}}>
+          <View style={{backgroundColor:'#808080', padding:25, paddingTop:50}}>
+            <View style={{flexDirection:'row', alignItems:'center',}}>
               <View
                 style={{
                   alignItems: 'center',
                   flexDirection: 'row',
                   borderColor: 'black',
                   backgroundColor:'#fff',
-                  elevation:2,
-                  marginTop:20,
                   borderRadius:10,
-                  color:'black'
+                  color:'black',
+                  flex:1
                 }}>
                   <Ionicons style={{marginLeft:15}} name="search" size={20} />
                   <TextInput
                   style={{flex: 1, marginLeft: 15, color:'black'}}
-                  placeholder="Search ..."/>
+                  placeholder="Search ..."
+                  placeholderTextColor={'black'}/>
               </View>
-               <TouchableOpacity style={{marginLeft:15, marginTop:15}}>
-                  <Foundation name='shopping-cart' size={30} color='white'/>
+               <TouchableOpacity style={{marginLeft:20}}>
+                  <Foundation name='shopping-cart' size={35} color='white'/>
                 </TouchableOpacity>
             </View>
           </View>
+      <View>
+         <FlatList
+          data={kategori}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item }) => 
+              <TouchableOpacity style={{
+              marginTop:15,
+              borderRadius:20,
+              paddingHorizontal:25,
+              paddingVertical:8,
+              marginLeft:10,
+              marginRight:10,
+              marginBottom:15,
+              backgroundColor:'#ffffff',
+              elevation:4
+            }}>
+            <Text>{item.nama}</Text>
+            </TouchableOpacity>}
+          />
+      </View>
           <ScrollView>
-            <View style={{ flexDirection:'row', flexWrap:'wrap', justifyContent:'space-evenly', marginTop: 10}}>
-              {kategoriSeleksi.map((kategori, i)=> (
+            <View style={{ flexDirection:'row', flexWrap:'wrap', justifyContent:'space-evenly'}}>
+              {kategoriSeleksi.map((kategoriSeleksi, i)=> (
                 <View key={i} style={{
                     borderRadius:8,
                     paddingHorizontal:10,
@@ -69,9 +111,10 @@ const Searchpage = () => {
                       width:150,
                       height:100,
                       resizeMode:'cover',
-                    }} source={kategori.image}/>
-                    <Text style={{fontWeight:'bold', fontSize:15}}>{kategori.SearchP}</Text>
-                    <Text>{kategori.author}</Text>
+                    }} source={kategoriSeleksi.image}/>
+                    <Text style={{fontWeight:'bold', fontSize:15}}>{kategoriSeleksi.SearchP}</Text>
+                    <Text>{kategoriSeleksi.author}</Text>
+                    <Text style={{fontSize:18, fontWeight:'bold', color:'red'}}>{kategoriSeleksi.price}</Text>
                       <View style={{flexDirection:'row', justifyContent:'space-between', alignItems:'center', marginTop:10}}>
                         <TouchableOpacity>
                         <Text style={{
@@ -82,10 +125,10 @@ const Searchpage = () => {
                           borderRadius:20,
                           textAlign:'center',
                           fontWeight:'bold'
-                        }}>{kategori.price}</Text>
+                        }}>{kategoriSeleksi.button}</Text>
                         </TouchableOpacity>
                         <TouchableOpacity>
-                        <Text>{kategori.Foundation}</Text>
+                        <Text>{kategoriSeleksi.Foundation}</Text>
                         </TouchableOpacity>
                       </View>
                 </View>
