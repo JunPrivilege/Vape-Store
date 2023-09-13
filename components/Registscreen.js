@@ -4,10 +4,8 @@ import  MaterialIcons  from "react-native-vector-icons/MaterialIcons";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather'
-import { navigation } from '@react-navigation/native';
 
-
-function Login ({navigation})  {
+function Register ({navigation})  {
     const [password, setPassword] = useState('');
     const [ConfirmPassword, setConfirmPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
@@ -112,4 +110,4 @@ function Login ({navigation})  {
   )
 }
 
-export default Login
+export default Register

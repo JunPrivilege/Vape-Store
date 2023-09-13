@@ -7,7 +7,7 @@ const Splashscreen = ({ navigation }) => {
   useEffect(() => {
     const splashDuration = 3000;
     const timer = setTimeout(() => {
-      navigation.replace('MyTabs');
+      navigation.replace('MainApp');
     }, splashDuration);
 
     return () => clearTimeout(timer);
