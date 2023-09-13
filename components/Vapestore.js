@@ -5,6 +5,7 @@ import { navigation } from '@react-navigation/native'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Foundation from 'react-native-vector-icons/Foundation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { stylesVapestore } from './styles/Vapestore';
 
 function Junstore({navigation}) {
     const [searchQuery, setSearchQuery, isHovered, setIsHovered] = useState('');

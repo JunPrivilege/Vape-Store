@@ -43,7 +43,7 @@ function Login ({navigation})  {
                         alignItems:'center',
                         borderBottomWidth:1, 
                         borderColor:'#000000'}}>
-                <MaterialIcons name='alternate-email' size={20}/>
+                <Feather name='user' size={20}/>
                 <TextInput style={{
                                 flex:1, 
                                 marginLeft:10, 
