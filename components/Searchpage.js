@@ -11,6 +11,7 @@ import {
   Image,
   StyleSheet,
 } from 'react-native';
+
 import React, {useState} from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Foundation from 'react-native-vector-icons/Foundation';
