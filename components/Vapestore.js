@@ -1,11 +1,7 @@
 import React, { Component, useState } from 'react';
 import {ImageBackground, ScrollView, View, Text, FlatList, TouchableOpacity, StatusBar, Image, TextInput, Button,} from 'react-native';
 import  Icon  from 'react-native-vector-icons/FontAwesome5';
-import { navigation } from '@react-navigation/native'
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-import Foundation from 'react-native-vector-icons/Foundation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { stylesVapestore } from './styles/Vapestore';
 
 function Junstore({navigation}) {
     const [searchQuery, setSearchQuery, isHovered, setIsHovered] = useState('');
