@@ -14,7 +14,9 @@ import {
 
 import React, {useState} from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Foundation from 'react-native-vector-icons/Foundation';
+import IconChart from 'react-native-vector-icons/Foundation';
+import { dataCategory } from '../src/constant/dataCategory';
+
 
 const Searchpage = () => {
   const [kategori, setKategori] = useState([
@@ -38,114 +40,66 @@ const Searchpage = () => {
     },
   ]);
 
-  const [kategoriSeleksi, setKategoriSeleksi] = useState([
-    {
-      SearchP: 'Paradewa',
-      author: 'Qorygore',
-      button: 'BUY',
-      price: 'Rp130.000',
-      Foundation: <Foundation name="shopping-cart" size={25} color="#808080" />,
-      image: require('../src/images/4.png'),
-    },
-    {
-      SearchP: 'Muffin & Xes',
-      author: 'Reza arap',
-      button: 'BUY',
-      price: 'Rp125.000',
-      Foundation: <Foundation name="shopping-cart" size={25} color="#808080" />,
-      image: require('../src/images/5.png'),
-    },
-    {
-      SearchP: 'Savage',
-      author: 'Ekoju',
-      button: 'BUY',
-      price: 'Rp120.000',
-      Foundation: <Foundation name="shopping-cart" size={25} color="#808080" />,
-      image: require('../src/images/1.png'),
-    },
-    {
-      SearchP: 'Groooven',
-      author: 'Xinn',
-      button: 'BUY',
-      price: 'Rp135.000',
-      Foundation: <Foundation name="shopping-cart" size={25} color="#808080" />,
-      image: require('../src/images/3.png'),
-    },
-    {
-      SearchP: 'Creamsie Whimsie',
-      author: 'Danzel & Lilo',
-      button: 'BUY',
-      price: 'Rp140.000',
-      Foundation: <Foundation name="shopping-cart" size={25} color="#808080" />,
-      image: require('../src/images/2.png'),
-    },
-    {
-      SearchP: 'Eskrim Mall',
-      author: 'Martinus Salim',
-      button: 'BUY',
-      price: 'Rp145.000',
-      Foundation: <Foundation name="shopping-cart" size={25} color="#808080" />,
-      image: require('../src/images/6.png'),
-    },
-  ]);
+  // const [kategoriSeleksi, setKategoriSeleksi] = useState(dataCategory);
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor={'white'} barStyle={'dark-content'} />
-        <ImageBackground style={{flex: 1}} source={require('../src/images/smoke.png')}>
-          <View style={styles.header}>
-            <View style={styles.headerWrapper}>
-              <View style={styles.textInputWrapper}>
-                <Ionicons style={{marginLeft: 15}} name="search" size={20} />
-                <TextInput
-                  style={styles.textInput}
-                  placeholder="Search ..."
-                  placeholderTextColor={'black'}
-                />
-              </View>
-              <TouchableOpacity style={{marginLeft: 20}}>
-                <Foundation name="shopping-cart" size={35} color="white" />
+      <ImageBackground
+        style={{flex: 1}}
+        source={require('../src/images/smoke.png')}>
+        <View style={styles.header}>
+          <View style={styles.headerWrapper}>
+            <View style={styles.textInputWrapper}>
+              <Ionicons style={{marginLeft: 15}} name="search" size={20} />
+              <TextInput
+                style={styles.textInput}
+                placeholder="Search ..."
+                placeholderTextColor={'black'}
+              />
+            </View>
+            <TouchableOpacity style={{marginLeft: 20}}>
+              <IconChart name="shopping-cart" size={35} color="white" />
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View>
+          <FlatList
+            data={kategori}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            renderItem={({item}) => (
+              <TouchableOpacity style={styles.items}>
+                <Text>{item.nama}</Text>
               </TouchableOpacity>
-            </View>
-          </View>
-          <View>
-            <FlatList
-              data={kategori}
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              renderItem={({item}) => (
-                <TouchableOpacity style={styles.items}>
-                  <Text>{item.nama}</Text>
-                </TouchableOpacity>
-              )}
-            />
-          </View>
-          <ScrollView>
-            <View style={styles.productWrapper}>
-              {kategoriSeleksi.map((kategoriSeleksi, i) => (
-                <View key={i} style={styles.card}>
-                  <Image
-                    style={styles.imageProduct}
-                    source={kategoriSeleksi.image}
-                  />
-                  <Text style={styles.title}>{kategoriSeleksi.SearchP}</Text>
-                  <Text>{kategoriSeleksi.author}</Text>
-                  <Text style={styles.price}>{kategoriSeleksi.price}</Text>
-                  <View style={styles.buttonWrapper}>
-                    <TouchableOpacity>
-                      <Text style={styles.titleButton}>
-                        {kategoriSeleksi.button}
-                      </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                      <Text>{kategoriSeleksi.Foundation}</Text>
-                    </TouchableOpacity>
-                  </View>
+            )}
+          />
+        </View>
+        <ScrollView>
+          <View style={styles.productWrapper}>
+            {dataCategory.map((kategoriSeleksi, i) => (
+              <View key={i} style={styles.card}>
+                <Image
+                  style={styles.imageProduct}
+                  source={kategoriSeleksi.image}
+                />
+                <Text style={styles.title}>{kategoriSeleksi.SearchP}</Text>
+                <Text>{kategoriSeleksi.author}</Text>
+                <Text style={styles.price}>{kategoriSeleksi.price}</Text>
+                <View style={styles.buttonWrapper}>
+                  <TouchableOpacity>
+                    <Text style={styles.titleButton}>
+                      {kategoriSeleksi.button}
+                    </Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity>
+                    <Text>{kategoriSeleksi.icon}</Text>
+                  </TouchableOpacity>
                 </View>
-              ))}
-            </View>
-          </ScrollView>
-        </ImageBackground>
+              </View>
+            ))}
+          </View>
+        </ScrollView>
+      </ImageBackground>
     </SafeAreaView>
   );
 };
@@ -159,17 +113,16 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: '#808080',
     padding: 25,
-    paddingTop: 50,
+    marginTop: 20,
   },
   headerWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: -25,
+    // marginTop: -25,
   },
   textInputWrapper: {
     alignItems: 'center',
     flexDirection: 'row',
-    borderColor: 'black',
     backgroundColor: '#fff',
     borderRadius: 10,
     color: 'black',

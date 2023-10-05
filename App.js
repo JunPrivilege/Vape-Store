@@ -16,7 +16,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator 
-      initialRouteName="Splash" 
+      initialRouteName="MainApp" 
       screenOptions={{headerShown: false}}>
         <Stack.Screen name="Splash" component={Splashscreen}/>
         <Stack.Screen name="Regist" component={Register}/>

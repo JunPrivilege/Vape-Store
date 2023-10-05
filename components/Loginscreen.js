@@ -35,7 +35,7 @@ function Login({navigation}) {
         source={require('../src/images/smoke.png')}
         style={{flex: 1}}>
         <StatusBar backgroundColor="#f5f5f5" barStyle={'dark-content'} />
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.content}>
             <View style={styles.bannerHeader}>
               <Image
