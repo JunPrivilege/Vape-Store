@@ -15,33 +15,11 @@ import {
 import React, {useState} from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import IconChart from 'react-native-vector-icons/Foundation';
-import { dataCategory } from '../src/constant/dataCategory';
-
+import { dataCategory } from '../src/constant/dataCategoryProduct';
+import { dataType } from '../src/constant/dataCategoryType';
 
 const Searchpage = () => {
-  const [kategori, setKategori] = useState([
-    {
-      nama: 'RDA',
-    },
-    {
-      nama: 'Drips',
-    },
-    {
-      nama: 'Coil',
-    },
-    {
-      nama: 'Baterai',
-    },
-    {
-      nama: 'Charger',
-    },
-    {
-      nama: 'Liquid',
-    },
-  ]);
-
   // const [kategoriSeleksi, setKategoriSeleksi] = useState(dataCategory);
-
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
@@ -64,7 +42,7 @@ const Searchpage = () => {
         </View>
         <View>
           <FlatList
-            data={kategori}
+            data={dataType}
             horizontal
             showsHorizontalScrollIndicator={false}
             renderItem={({item}) => (
@@ -74,7 +52,7 @@ const Searchpage = () => {
             )}
           />
         </View>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.productWrapper}>
             {dataCategory.map((kategoriSeleksi, i) => (
               <View key={i} style={styles.card}>

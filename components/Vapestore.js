@@ -14,77 +14,14 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { categoryVapestore } from '../src/constant/dataCategoryVapestore';
+import { categoryArrival } from '../src/constant/dataCategoryArrival';
 
 function Junstore({navigation}) {
   const [searchQuery, setSearchQuery, isHovered, setIsHovered] = useState('');
   const handleSearch = text => {
     setSearchQuery(text);
   };
-  const [kategoriSeleksi, setKategoriSeleksi] = useState([
-    {
-      bestS: 'Paradewa',
-      author: 'Qorygore',
-      image: require('../src/images/4.png'),
-    },
-    {
-      bestS: 'Muffin & Xes',
-      author: 'Reza arap',
-      image: require('../src/images/5.png'),
-    },
-    {
-      bestS: 'Savage',
-      author: 'Ekoju',
-      image: require('../src/images/1.png'),
-    },
-    {
-      bestS: 'Groooven',
-      author: 'Xinn',
-      image: require('../src/images/3.png'),
-    },
-    {
-      bestS: 'Creamsie Whimsie',
-      author: 'Danzel & Lilo',
-      image: require('../src/images/2.png'),
-    },
-    {
-      bestS: 'Eskrim Mall',
-      author: 'Martinus Salim',
-      image: require('../src/images/6.png'),
-    },
-  ]);
-
-  const [kategoriArrival, setKategoriArrival] = useState([
-    {
-      bestA: 'SMOK',
-      price: 'Rp.300K',
-      image: require('../src/images/7.png'),
-    },
-    {
-      bestA: 'Caliburn',
-      price: 'Rp.340K',
-      image: require('../src/images/8.png'),
-    },
-    {
-      bestA: 'VMATE',
-      price: 'Rp.180K',
-      image: require('../src/images/9.png'),
-    },
-    {
-      bestA: 'Centaurus',
-      price: 'Rp.600K',
-      image: require('../src/images/10.png'),
-    },
-    {
-      bestA: 'Argus',
-      price: 'Rp.310K',
-      image: require('../src/images/11.png'),
-    },
-    {
-      bestA: 'JellyBox',
-      price: 'Rp.170K',
-      image: require('../src/images/12.png'),
-    },
-  ]);
   
   return (
     <ImageBackground
@@ -130,7 +67,7 @@ function Junstore({navigation}) {
             </TouchableOpacity>
           </View>
           <FlatList
-            data={kategoriSeleksi}
+            data={categoryVapestore}
             horizontal
             showsHorizontalScrollIndicator={false}
             renderItem={({item}) => (
@@ -155,7 +92,7 @@ function Junstore({navigation}) {
           </View>
           <View style={{}}>
             <FlatList
-              data={kategoriArrival}
+              data={categoryArrival}
               horizontal
               showsHorizontalScrollIndicator={false}
               renderItem={({item}) => (
