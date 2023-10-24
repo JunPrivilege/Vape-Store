@@ -3,7 +3,7 @@ import React from 'react';
 
 export const dataCategory = [
   {
-    SearchP: 'Paradewa',
+    title: 'Paradewa',
     author: 'Qorygore',
     button: 'BUY',
     price: 'Rp130.000',
@@ -11,7 +11,7 @@ export const dataCategory = [
     image: require('../images/4.png'),
   },
   {
-    SearchP: 'Muffin & Xes',
+    title: 'Muffin & Xes',
     author: 'Reza arap',
     button: 'BUY',
     price: 'Rp125.000',
@@ -19,7 +19,7 @@ export const dataCategory = [
     image: require('../images/5.png'),
   },
   {
-    SearchP: 'Savage',
+    title: 'Savage',
     author: 'Ekoju',
     button: 'BUY',
     price: 'Rp120.000',
@@ -27,7 +27,7 @@ export const dataCategory = [
     image: require('../images/1.png'),
   },
   {
-    SearchP: 'Groooven',
+    title: 'Groooven',
     author: 'Xinn',
     button: 'BUY',
     price: 'Rp135.000',
@@ -35,7 +35,7 @@ export const dataCategory = [
     image: require('../images/3.png'),
   },
   {
-    SearchP: 'Creamsie Whimsie',
+    title: 'Creamsie Whimsie',
     author: 'Danzel & Lilo',
     button: 'BUY',
     price: 'Rp140.000',
@@ -43,7 +43,7 @@ export const dataCategory = [
     image: require('../images/2.png'),
   },
   {
-    SearchP: 'Eskrim Mall',
+    title: 'Eskrim Mall',
     author: 'Martinus Salim',
     button: 'BUY',
     price: 'Rp145.000',

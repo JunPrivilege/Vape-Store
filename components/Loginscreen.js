@@ -14,6 +14,9 @@ import {
 import React, {useState} from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
+import background from '../src/images/smoke.png'
+import Colors from '../src/constant/Colors';
+import { categoryMedsos } from '../src/constant/DataCategoryMedsos';
 
 function Login({navigation}) {
   const [password, setPassword] = useState('');
@@ -23,17 +26,9 @@ function Login({navigation}) {
     setShowPassword(!showPassword);
   };
 
-  const [kategoriMedsos, setKategoriMedsos] = useState([
-    {image: require('../src/images/google.png')},
-    {image: require('../src/images/facebook.png')},
-    {image: require('../src/images/twitter.png')},
-  ]);
-
   return (
     <SafeAreaView style={styles.container}>
-      <ImageBackground
-        source={require('../src/images/smoke.png')}
-        style={{flex: 1}}>
+      <ImageBackground style={{flex: 1}} source={background}>
         <StatusBar backgroundColor="#f5f5f5" barStyle={'dark-content'} />
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.content}>
@@ -75,7 +70,7 @@ function Login({navigation}) {
             </TouchableOpacity>
             <Text style={styles.titleThird}>Or, login with ...</Text>
             <View style={styles.medsos}>
-              {kategoriMedsos.map((kategoriMedsos, i) => (
+              {categoryMedsos.map((kategoriMedsos, i) => (
                 <TouchableOpacity style={styles.imageMedsos} key={i}>
                   <Image style={styles.image} source={kategoriMedsos.image} />
                 </TouchableOpacity>
@@ -118,33 +113,33 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 25,
     fontWeight: '400',
-    color: '#000',
+    color: Colors.black,
     marginTop: 20,
   },
   titleSecond: {
     fontSize: 15,
     fontWeight: '300',
-    color: '#000',
+    color: Colors.black,
     marginTop: 8,
     marginBottom: 20,
-    color: '#808080',
+    color: Colors.primary,
   },
   inputWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
     borderBottomWidth: 1,
-    borderColor: '#000000',
+    borderColor: Colors.black,
   },
   textInput: {
     flex: 1,
     marginLeft: 10,
-    color: '#000',
+    color: Colors.black,
   },
   inputWrapperSecond: {
     flexDirection: 'row',
     alignItems: 'center',
     borderBottomWidth: 1,
-    borderColor: '#000000',
+    borderColor: Colors.black,
     marginTop: 8,
     justifyContent: 'space-between',
   },
@@ -153,26 +148,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   textInputSecond: {
-    color: '#000',
+    color: Colors.black,
     marginLeft: 10,
   },
   button: {
     padding: 15,
     borderRadius: 25,
     marginBottom: 15,
-    backgroundColor: '#5BCF00',
+    backgroundColor: Colors.green,
     marginTop: 20,
   },
   textButton: {
     fontSize: 15,
     textAlign: 'center',
-    color: '#fff',
+    color: Colors.white,
   },
   titleThird: {
     fontSize: 15,
     textAlign: 'center',
     fontWeight: '400',
-    color: '#808080',
+    color: Colors.primary,
     paddingBottom: 20,
   },
   medsos: {
@@ -180,7 +175,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   imageMedsos: {
-    borderColor: '#808080',
+    borderColor: Colors.primary,
     paddingHorizontal: 10,
     paddingVertical: 10,
     borderRadius: 10,
@@ -196,12 +191,12 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
   },
   text: {
-    color: '#808080',
+    color: Colors.primary,
     fontWeight: '400',
   },
   textSecond: {
-    color: '#0000FF',
+    color: Colors.blue,
     borderBottomWidth: 1,
-    borderColor: '#0000FF',
+    borderColor: Colors.blue,
   },
 });

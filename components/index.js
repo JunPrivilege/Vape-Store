@@ -1,8 +1,8 @@
-import Login from "./Loginscreen";
-import Register from "./Registscreen";
-import Junstore from "./Vapestore";
-import Searchpage from "./Searchpage";
-import Splashscreen from "./Splashscreen";
+import Login from "./LoginScreen";
+import Register from "./RegistrationScreen";
+import Junstore from "./HomeScreen";
+import Searchpage from "./SearchScreen";
+import Splashscreen from "./SplashScreen";
 
 export {
     Login,

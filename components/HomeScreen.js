@@ -12,21 +12,23 @@ import {
   Button,
   StyleSheet,
 } from 'react-native';
+
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { categoryVapestore } from '../src/constant/dataCategoryVapestore';
+import background from '../src/images/smoke.png'
+import Colors from '../src/constant/Colors';
+
+import { categorySeleksi } from '../src/constant/DataCategorySeleksi';
 import { categoryArrival } from '../src/constant/dataCategoryArrival';
 
-function Junstore({navigation}) {
+function Junstore() {
   const [searchQuery, setSearchQuery, isHovered, setIsHovered] = useState('');
   const handleSearch = text => {
     setSearchQuery(text);
   };
   
   return (
-    <ImageBackground
-      style={{flex: 1}}
-      source={require('../src/images/smoke.png')}>
+    <ImageBackground style={{flex: 1}} source={background}>
       <View style={styles.container}>
         <StatusBar
           translucent
@@ -59,22 +61,18 @@ function Junstore({navigation}) {
             <Text style={styles.title}>Best Offers</Text>
             <TouchableOpacity style={styles.iconButton}>
               <Text style={styles.titleSecond}>Lihat Semua</Text>
-              <Icon
-                style={{marginLeft: 5}}
-                name="chevron-right"
-                color="#bdbdbd"
-              />
+              <Icon style={styles.iconTitle} name="chevron-right" />
             </TouchableOpacity>
           </View>
           <FlatList
-            data={categoryVapestore}
+            data={categorySeleksi}
             horizontal
             showsHorizontalScrollIndicator={false}
             renderItem={({item}) => (
               <TouchableOpacity style={styles.card}>
                 <Image source={item.image} style={styles.imageCard} />
-                <Text style={styles.titleCard}>{item.bestS}</Text>
-                <Text style={{color: '#000000'}}>{item.author}</Text>
+                <Text style={styles.titleCard}>{item.title}</Text>
+                <Text style={{color: Colors.black}}>{item.author}</Text>
               </TouchableOpacity>
             )}
           />
@@ -83,11 +81,7 @@ function Junstore({navigation}) {
             <Text style={{color: 'red'}}> (HOT)</Text>
             <TouchableOpacity style={styles.iconButtonSecond}>
               <Text style={styles.titleSecond}>Lihat Semua</Text>
-              <Icon
-                style={{marginLeft: 5}}
-                name="chevron-right"
-                color="#bdbdbd"
-              />
+              <Icon style={styles.iconTitle} name="chevron-right" />
             </TouchableOpacity>
           </View>
           <View style={{}}>
@@ -98,8 +92,8 @@ function Junstore({navigation}) {
               renderItem={({item}) => (
                 <TouchableOpacity style={styles.cardSecond}>
                   <Image source={item.image} style={styles.imageCardSecond} />
-                  <Text style={styles.titleCard}>{item.bestA}</Text>
-                  <Text style={{color: '#000000'}}>{item.price}</Text>
+                  <Text style={styles.titleCard}>{item.title}</Text>
+                  <Text style={{color: 'red'}}>{item.price}</Text>
                 </TouchableOpacity>
               )}
             />
@@ -132,11 +126,11 @@ const styles = StyleSheet.create({
   titleHeader: {
     fontSize: 30,
     fontWeight: '300',
-    color: '#808080',
+    color: Colors.primary,
   },
   titleHeaderSecond: {
     fontWeight: 'bold',
-    color: '#808080',
+    color: Colors.primary,
   },
   inputWrapper: {
     flexDirection: 'row',
@@ -144,12 +138,12 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     paddingHorizontal: 25,
     paddingVertical: 3,
-    backgroundColor: '#ffffff',
+    backgroundColor: Colors.white,
     elevation: 2,
   },
   textInput: {
     marginLeft: 15,
-    color: 'black',
+    color: Colors.black,
   },
   titleWrapper: {
     marginHorizontal: 20,
@@ -166,11 +160,15 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: '400',
-    color: '#000000',
+    color: Colors.black,
+  },
+  iconTitle: {
+    marginLeft: 5,
+    color: Colors.primary
   },
   titleSecond: {
     fontSize: 14,
-    color: '#bdbdbd',
+    color: Colors.primary,
   },
   card: {
     borderRadius: 15,
@@ -178,7 +176,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     marginRight: 15,
     marginBottom: 10,
-    backgroundColor: '#ffffff',
+    backgroundColor: Colors.white,
     elevation: 4,
   },
   imageCard: {
@@ -190,7 +188,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   titleCard: {
-    color: '#000000',
+    color: Colors.black,
     fontWeight: 'bold',
     fontSize: 18,
   },
@@ -206,7 +204,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     marginRight: 10,
     marginBottom: 20,
-    backgroundColor: '#ffffff',
+    backgroundColor: Colors.white,
     elevation: 4,
   },
   imageCardSecond: {

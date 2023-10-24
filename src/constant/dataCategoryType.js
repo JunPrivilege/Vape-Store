@@ -1,20 +1,20 @@
 export const dataType = [
   {
-    nama: 'RDA',
+    name: 'RDA',
   },
   {
-    nama: 'Drips',
+    name: 'Drips',
   },
   {
-    nama: 'Coil',
+    name: 'Coil',
   },
   {
-    nama: 'Baterai',
+    name: 'Baterai',
   },
   {
-    nama: 'Charger',
+    name: 'Charger',
   },
   {
-    nama: 'Liquid',
+    name: 'Liquid',
   },
 ];

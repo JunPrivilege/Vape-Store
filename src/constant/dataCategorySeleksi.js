@@ -1,31 +1,31 @@
-export const categoryVapestore = [
+export const categorySeleksi = [
   {
-    bestS: 'Paradewa',
+    title: 'Paradewa',
     author: 'Qorygore',
     image: require('../images/4.png'),
   },
   {
-    bestS: 'Muffin & Xes',
+    title: 'Muffin & Xes',
     author: 'Reza arap',
     image: require('../images/5.png'),
   },
   {
-    bestS: 'Savage',
+    title: 'Savage',
     author: 'Ekoju',
     image: require('../images/1.png'),
   },
   {
-    bestS: 'Groooven',
+    title: 'Groooven',
     author: 'Xinn',
     image: require('../images/3.png'),
   },
   {
-    bestS: 'Creamsie Whimsie',
+    title: 'Creamsie Whimsie',
     author: 'Danzel & Lilo',
     image: require('../images/2.png'),
   },
   {
-    bestS: 'Eskrim Mall',
+    title: 'Eskrim Mall',
     author: 'Martinus Salim',
     image: require('../images/6.png'),
   },

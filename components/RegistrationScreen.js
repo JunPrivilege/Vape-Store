@@ -14,6 +14,8 @@ import {
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather'
+import background from '../src/images/smoke.png'
+import Colors from '../src/constant/Colors';
 
 function Register ({navigation})  {
     const [password, setPassword] = useState('');
@@ -30,7 +32,7 @@ function Register ({navigation})  {
 
   return (
 <SafeAreaView style={styles.container}>
-  <ImageBackground source={require('../src/images/smoke.png')} style={{flex:1}}>
+  <ImageBackground style={{flex:1}} source={background}>
     <StatusBar backgroundColor='#f5f5f5' barStyle={'dark-content'}/>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.content}>
@@ -79,7 +81,7 @@ function Register ({navigation})  {
             <Text style={styles.text}>Already have an account?</Text>
               <TouchableOpacity onPress={() => navigation.goBack()}>
                 <Text style={styles.textSecond}>Login</Text>
-              </TouchableOpacity>               
+              </TouchableOpacity>
           </View>
        </View>
      </ScrollView>
@@ -111,7 +113,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize:25, 
     fontWeight:'400', 
-    color:'#000', 
+    color: Colors.black, 
     marginTop:20,
     paddingBottom:15
   },
@@ -119,18 +121,18 @@ const styles = StyleSheet.create({
     flexDirection:'row', 
     alignItems:'center',
     borderBottomWidth:1, 
-    borderColor:'#000000'
+    borderColor: Colors.black
   },
   textInput: {
     flex:1, 
     marginLeft:10, 
-    color:'#000'
+    color: Colors.black
   },
   inputWrapperPassword: {
     flexDirection:'row', 
     alignItems:'center', 
     borderBottomWidth:1, 
-    borderColor:'#000000', 
+    borderColor: Colors.black, 
     marginTop:8,
     justifyContent:'space-between'
   },
@@ -139,20 +141,20 @@ const styles = StyleSheet.create({
     alignItems:'center'
   },
   textInputPassword: {
-    color:'#000', 
+    color: Colors.black, 
     marginLeft:10
   },
   button: {
     padding:15,
     borderRadius:25,
     marginBottom:15,
-    backgroundColor:'#5BCF00', 
+    backgroundColor: Colors.green, 
     marginTop:20
   },
   textButton: {
     fontSize:15,
     textAlign:'center',
-    color:'#fff'
+    color: Colors.white
   },
   textWrapper: {
     flexDirection:'row', 
@@ -161,12 +163,12 @@ const styles = StyleSheet.create({
     paddingBottom:30
   },
   text: {
-    color:'#808080', 
+    color: Colors.primary, 
     fontWeight:'400'
   },
   textSecond: {
-    color:'#0000FF', 
+    color: Colors.blue, 
     borderBottomWidth:1, 
-    borderColor:'#0000FF'
+    borderColor: Colors.blue
   },
 })
