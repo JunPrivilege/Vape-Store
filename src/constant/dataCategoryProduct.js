@@ -1,5 +1,5 @@
-import Icon from 'react-native-vector-icons/Foundation';
 import React from 'react';
+import Icon from 'react-native-vector-icons/Foundation';
 
 export const dataCategory = [
   {
